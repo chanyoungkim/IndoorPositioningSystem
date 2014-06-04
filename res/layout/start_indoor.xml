@@ -1,0 +1,164 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dl_activity_main_drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".indoorMain" >
+
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/fl_activity_main_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.androidhuman.example.mapsv2example.indoorMain" >
+
+        <com.androidhuman.example.mapsv2example.MapView
+            android:id="@+id/floor_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:scaleType="matrix"
+            android:src="@drawable/f4" />
+
+        <LinearLayout
+            android:id="@+id/temp_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Calibration"
+                android:textColor="#ffffff"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/message"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:gravity="center"
+                android:text="test message"
+                android:textColor="#ffffff"
+                android:textSize="15dp" />
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dip"
+                android:layout_weight="2"
+                android:src="@drawable/init" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <ListView
+        android:id="@+id/left_nav_list"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#BABABA"
+        android:choiceMode="singleChoice"
+        android:divider="@color/common_action_bar_splitter"
+        android:dividerHeight="1dp" />
+
+    <LinearLayout
+        android:id="@+id/drawer_right"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FAF9F0"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="2"
+                android:text="  현재 위치"
+                android:textColor="#735254"
+                android:textSize="15dp" />
+
+            <Switch
+                android:id="@+id/position_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#F7F7EF" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FDFDFA"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/button_bluetooth"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/bluetooth"
+                android:paddingTop="7dp"
+                android:text="블루투스 장치"
+                android:textColor="#735254"
+                android:textSize="10dp" />
+
+            <Button
+                android:id="@+id/button_navigate"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/navigate"
+                android:paddingTop="7dp"
+                android:text="길 안내"
+                android:textColor="#735254"
+                android:textSize="10dp" />
+
+            <Button
+                android:id="@+id/button_object"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/object"
+                android:listSelector="#735254"
+                android:paddingTop="7dp"
+                android:text="물건 색 선택"
+                android:textColor="#735254"
+                android:textSize="10dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#F7F7EF" />
+
+        <ListView
+            android:id="@+id/right_nav_list"
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:background="#EDEDED"
+            android:choiceMode="singleChoice"
+            android:divider="@color/common_action_bar_splitter"
+            android:dividerHeight="1dp" />
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>
